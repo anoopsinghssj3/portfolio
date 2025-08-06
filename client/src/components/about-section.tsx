@@ -61,10 +61,11 @@ export default function AboutSection() {
           >
             <div className="relative overflow-hidden rounded-2xl">
               <motion.img 
-                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=450&q=80" 
                 alt="Clean modern workspace with laptop and design tools" 
                 className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
                 whileHover={{ scale: 1.02 }}
+                loading="lazy"
               />
               <motion.div
                 className="absolute inset-0 bg-gradient-to-tr from-accent/20 to-success/20"

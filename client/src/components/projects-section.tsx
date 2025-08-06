@@ -106,10 +106,11 @@ export default function ProjectsSection() {
     >
       <div className="relative overflow-hidden">
         <motion.img 
-          src={project.image}
+          src={project.image.replace(/w=800&h=500/, "w=400&h=300&q=75")}
           alt={`${project.title} interface`}
           className="w-full h-48 md:h-56 object-cover transition-transform duration-700"
           whileHover={{ scale: 1.1 }}
+          loading="lazy"
         />
         
         {/* Overlay with hover effects */}

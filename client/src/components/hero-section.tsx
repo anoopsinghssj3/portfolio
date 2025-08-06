@@ -61,9 +61,10 @@ export default function HeroSection() {
             transition={{ type: "spring", stiffness: 300, damping: 10 }}
           >
             <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&h=300" 
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=160&h=160&q=80" 
               alt="Alex Thompson - Full Stack Developer" 
               className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto shadow-2xl object-cover border-4 border-accent/60"
+              loading="eager"
             />
             <motion.div
               className="absolute inset-0 rounded-full bg-gradient-to-br from-accent/30 to-success/30"

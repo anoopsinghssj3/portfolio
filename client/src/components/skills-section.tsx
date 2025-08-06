@@ -102,11 +102,10 @@ export default function SkillsSection() {
           transition={{ duration: 1.5, delay, ease: "easeOut" }}
         >
           <motion.div
-            className="absolute inset-0 bg-white/30 rounded-full"
-            animate={{ x: ["0%", "100%", "0%"] }}
+            className="absolute inset-0 bg-white/20 rounded-full"
+            animate={animated ? { x: ["0%", "100%", "0%"], opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
           />
         </motion.div>
       </div>
