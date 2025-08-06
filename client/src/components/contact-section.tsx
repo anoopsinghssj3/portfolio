@@ -11,8 +11,8 @@ export default function ContactSection() {
     {
       icon: Mail,
       title: "Email",
-      value: "alex@example.com",
-      link: "mailto:alex@example.com",
+      value: "anoopsinghssj3@gmail.com",
+      link: "mailto:anoopsinghssj3@gmail.com",
       color: "text-accent",
       bgColor: "bg-accent/10",
       description: "Best way to reach me"
@@ -20,8 +20,8 @@ export default function ContactSection() {
     {
       icon: Linkedin,
       title: "LinkedIn",
-      value: "Alex Thompson",
-      link: "https://linkedin.com/in/alexthompson",
+      value: "Anoop Singh",
+      link: "https://www.linkedin.com/in/anoop-singh-6b60a0294/",
       color: "text-blue-500",
       bgColor: "bg-blue-500/10",
       description: "Let's connect professionally"
@@ -29,8 +29,8 @@ export default function ContactSection() {
     {
       icon: Github,
       title: "GitHub",
-      value: "@alexthompson",
-      link: "https://github.com/alexthompson",
+      value: "@anoopsinghssj3",
+      link: "https://github.com/anoopsinghssj3/",
       color: "text-purple-400",
       bgColor: "bg-purple-400/10",
       description: "Check out my repositories"
@@ -38,8 +38,8 @@ export default function ContactSection() {
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      value: "+91 9174697005",
+      link: "tel:+919174697005",
       color: "text-success",
       bgColor: "bg-success/10",
       description: "Available for quick calls"
@@ -89,7 +89,7 @@ export default function ContactSection() {
             variants={itemVariants}
             className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6"
           >
-            Let's <span className="gradient-text">Connect</span>
+            Let's Connect 
           </motion.h2>
           
           <motion.p

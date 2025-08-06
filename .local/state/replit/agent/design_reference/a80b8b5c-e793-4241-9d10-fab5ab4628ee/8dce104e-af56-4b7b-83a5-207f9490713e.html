@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Thompson - Full Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0F172A',
+                        secondary: '#1E293B',
+                        accent: '#3B82F6',
+                        success: '#10B981'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #3B82F6, #10B981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+        }
+        
+        .skill-bar {
+            transition: width 2s ease-in-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-primary text-white font-inter antialiased">
+
+    <!-- @COMPONENT: Navigation -->
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-primary/95 backdrop-blur-sm border-b border-secondary/50 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-xl font-bold">
+                    <span class="gradient-text" data-bind="portfolio.name">Alex.dev</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-accent transition-colors duration-300">Home</a>
+                    <a href="#about" class="hover:text-accent transition-colors duration-300">About</a>
+                    <a href="#skills" class="hover:text-accent transition-colors duration-300">Skills</a>
+                    <a href="#projects" class="hover:text-accent transition-colors duration-300">Projects</a>
+                    <a href="#contact" class="hover:text-accent transition-colors duration-300">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden border-t border-secondary/50">
+                <div class="py-4 space-y-4">
+                    <a href="#home" class="block hover:text-accent transition-colors duration-300">Home</a>
+                    <a href="#about" class="block hover:text-accent transition-colors duration-300">About</a>
+                    <a href="#skills" class="block hover:text-accent transition-colors duration-300">Skills</a>
+                    <a href="#projects" class="block hover:text-accent transition-colors duration-300">Projects</a>
+                    <a href="#contact" class="block hover:text-accent transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center px-4 pt-20">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="mb-8">
+                <!-- Professional headshot placeholder -->
+                <img src="/images/Anoop pic.jpg" 
+                     alt="Alex Thompson - Full Stack Developer" 
+                     class="w-32 h-32 rounded-full mx-auto shadow-2xl object-cover border-4 border-accent"
+                     data-mock-image="true" data-implementation="Use user profile image">
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in-up">
+                Hi, I'm <span class="gradient-text" data-bind="user.firstName">Alex</span>
+            </h1>
+            
+            <h2 class="text-xl md:text-2xl text-slate-300 mb-8 fade-in-up" style="animation-delay: 0.2s;">
+                <span data-bind="user.title">Full Stack Developer</span> & <span data-bind="user.specialty">UI/UX Designer</span>
+            </h2>
+            
+            <p class="text-lg text-slate-400 mb-10 max-w-2xl mx-auto fade-in-up" style="animation-delay: 0.4s;" data-bind="user.bio">
+                I create beautiful, responsive web applications using modern technologies. 
+                Passionate about clean code, user experience, and solving complex problems.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in-up" style="animation-delay: 0.6s;">
+                <a href="#projects" class="bg-accent hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-xl hover:shadow-accent/25">
+                    View My Work
+                </a>
+                <a href="#contact" class="border border-accent text-accent hover:bg-accent hover:text-white px-8 py-3 rounded-lg font-medium transition-all duration-300">
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: About Section -->
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 bg-secondary/50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                About <span class="gradient-text">Me</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <!-- Professional workspace image -->
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                         alt="Clean modern workspace with laptop and design tools" 
+                         class="rounded-xl shadow-2xl w-full h-auto">
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6" data-bind="about.title">Crafting Digital Experiences</h3>
+                    <div class="space-y-4 text-slate-300">
+                        <p data-bind="about.paragraph1">
+                            With over 5 years of experience in web development, I specialize in creating 
+                            scalable, user-friendly applications that solve real-world problems. My journey 
+                            started with a Computer Science degree and has evolved through various challenging projects.
+                        </p>
+                        <p data-bind="about.paragraph2">
+                            I'm passionate about staying current with the latest technologies and best practices. 
+                            When I'm not coding, you'll find me contributing to open-source projects, mentoring 
+                            junior developers, or exploring new design trends.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-8 grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-accent" data-bind="stats.projects">50+</div>
+                            <div class="text-sm text-slate-400">Projects Completed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-success" data-bind="stats.experience">5+</div>
+                            <div class="text-sm text-slate-400">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: About Section -->
+
+    <!-- @COMPONENT: Skills Section -->
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                Technical <span class="gradient-text">Skills</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Frontend Skills -->
+                <div class="bg-secondary/50 rounded-xl p-6">
+                    <h3 class="text-xl font-semibold mb-6 text-accent">
+                        <i class="fas fa-code mr-2"></i>Frontend Development
+                    </h3>
+                    
+                    <!-- @MAP: frontendSkills.map(skill => ( -->
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span data-bind="skill.name">React.js</span>
+                                <span class="text-slate-400" data-bind="skill.level">90%</span>
+                            </div>
+                            <div class="bg-slate-700 rounded-full h-2">
+                                <div class="skill-bar bg-accent h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span data-bind="skill.name">TypeScript</span>
+                                <span class="text-slate-400" data-bind="skill.level">85%</span>
+                            </div>
+                            <div class="bg-slate-700 rounded-full h-2">
+                                <div class="skill-bar bg-accent h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span data-bind="skill.name">Tailwind CSS</span>
+                                <span class="text-slate-400" data-bind="skill.level">88%</span>
+                            </div>
+                            <div class="bg-slate-700 rounded-full h-2">
+                                <div class="skill-bar bg-accent h-2 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span data-bind="skill.name">Next.js</span>
+                                <span class="text-slate-400" data-bind="skill.level">82%</span>
+                            </div>
+                            <div class="bg-slate-700 rounded-full h-2">
+                                <div class="skill-bar bg-accent h-2 rounded-full" style="width: 82%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- @END_MAP )) -->
+                </div>
+                
+                <!-- Backend Skills -->
+                <div class="bg-secondary/50 rounded-xl p-6">
+                    <h3 class="text-xl font-semibold mb-6 text-success">
+                        <i class="fas fa-server mr-2"></i>Backend Development
+                    </h3>
+                    
+                    <!-- @MAP: backendSkills.map(skill => ( -->
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span data-bind="skill.name">Node.js</span>
+                                <span class="text-slate-400" data-bind="skill.level">87%</span>
+                            </div>
+                            <div class="bg-slate-700 rounded-full h-2">
+                                <div class="skill-bar bg-success h-2 rounded-full" style="width: 87%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span data-bind="skill.name">Python</span>
+                                <span class="text-slate-400" data-bind="skill.level">80%</span>
+                            </div>
+                            <div class="bg-slate-700 rounded-full h-2">
+                                <div class="skill-bar bg-success h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span data-bind="skill.name">PostgreSQL</span>
+                                <span class="text-slate-400" data-bind="skill.level">85%</span>
+                            </div>
+                            <div class="bg-slate-700 rounded-full h-2">
+                                <div class="skill-bar bg-success h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span data-bind="skill.name">AWS</span>
+                                <span class="text-slate-400" data-bind="skill.level">75%</span>
+                            </div>
+                            <div class="bg-slate-700 rounded-full h-2">
+                                <div class="skill-bar bg-success h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- @END_MAP )) -->
+                </div>
+            </div>
+            
+            <!-- Tools & Technologies -->
+            <div class="mt-12">
+                <h3 class="text-xl font-semibold mb-8 text-center">Tools & Technologies</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <!-- @MAP: tools.map(tool => ( -->
+                    <span class="bg-secondary/50 px-4 py-2 rounded-full text-sm hover:bg-accent hover:text-white transition-all duration-300" data-bind="tool.name">Git</span>
+                    <span class="bg-secondary/50 px-4 py-2 rounded-full text-sm hover:bg-accent hover:text-white transition-all duration-300" data-bind="tool.name">Docker</span>
+                    <span class="bg-secondary/50 px-4 py-2 rounded-full text-sm hover:bg-accent hover:text-white transition-all duration-300" data-bind="tool.name">Figma</span>
+                    <span class="bg-secondary/50 px-4 py-2 rounded-full text-sm hover:bg-accent hover:text-white transition-all duration-300" data-bind="tool.name">VS Code</span>
+                    <span class="bg-secondary/50 px-4 py-2 rounded-full text-sm hover:bg-accent hover:text-white transition-all duration-300" data-bind="tool.name">Postman</span>
+                    <span class="bg-secondary/50 px-4 py-2 rounded-full text-sm hover:bg-accent hover:text-white transition-all duration-300" data-bind="tool.name">Vercel</span>
+                    <!-- @END_MAP )) -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Skills Section -->
+
+    <!-- @COMPONENT: Projects Section -->
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4 bg-secondary/50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                Featured <span class="gradient-text">Projects</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- @MAP: projects.map(project => ( -->
+                <!-- Project Card 1 -->
+                <div class="bg-secondary rounded-xl overflow-hidden shadow-xl card-hover">
+                    <!-- Modern e-commerce interface with clean product layout -->
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500" 
+                         alt="E-commerce platform dashboard showing modern product interface" 
+                         class="w-full h-48 object-cover"
+                         data-mock-image="true" data-implementation="Use project screenshot">
+                    
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2" data-bind="project.title">E-Commerce Platform</h3>
+                        <p class="text-slate-300 mb-4" data-bind="project.description">
+                            Full-stack e-commerce solution built with React, Node.js, and Stripe integration. 
+                            Features include user authentication, payment processing, and admin dashboard.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <!-- @MAP: project.technologies.map(tech => ( -->
+                            <span class="bg-accent/20 text-accent px-2 py-1 rounded text-xs" data-bind="tech">React</span>
+                            <span class="bg-accent/20 text-accent px-2 py-1 rounded text-xs" data-bind="tech">Node.js</span>
+                            <span class="bg-accent/20 text-accent px-2 py-1 rounded text-xs" data-bind="tech">MongoDB</span>
+                            <!-- @END_MAP )) -->
+                        </div>
+                        
+                        <div class="flex gap-3">
+                            <a href="#" class="flex items-center text-accent hover:text-blue-300 transition-colors duration-300"
+                               data-event="click:openLiveDemo" data-implementation="Open project live demo">
+                                <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                            </a>
+                            <a href="#" class="flex items-center text-slate-400 hover:text-white transition-colors duration-300"
+                               data-event="click:openGitHub" data-implementation="Open GitHub repository">
+                                <i class="fab fa-github mr-2"></i>Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project Card 2 -->
+                <div class="bg-secondary rounded-xl overflow-hidden shadow-xl card-hover">
+                    <!-- Task management app interface with organized layout -->
+                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500" 
+                         alt="Modern task management application interface with organized project boards" 
+                         class="w-full h-48 object-cover"
+                         data-mock-image="true" data-implementation="Use project screenshot">
+                    
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2" data-bind="project.title">Task Management App</h3>
+                        <p class="text-slate-300 mb-4" data-bind="project.description">
+                            Collaborative project management tool with real-time updates, drag-and-drop functionality, 
+                            and team collaboration features. Built with modern React patterns.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-success/20 text-success px-2 py-1 rounded text-xs" data-bind="tech">React</span>
+                            <span class="bg-success/20 text-success px-2 py-1 rounded text-xs" data-bind="tech">TypeScript</span>
+                            <span class="bg-success/20 text-success px-2 py-1 rounded text-xs" data-bind="tech">Firebase</span>
+                        </div>
+                        
+                        <div class="flex gap-3">
+                            <a href="#" class="flex items-center text-accent hover:text-blue-300 transition-colors duration-300"
+                               data-event="click:openLiveDemo" data-implementation="Open project live demo">
+                                <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                            </a>
+                            <a href="#" class="flex items-center text-slate-400 hover:text-white transition-colors duration-300"
+                               data-event="click:openGitHub" data-implementation="Open GitHub repository">
+                                <i class="fab fa-github mr-2"></i>Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project Card 3 -->
+                <div class="bg-secondary rounded-xl overflow-hidden shadow-xl card-hover">
+                    <!-- Weather application with clean modern interface -->
+                    <img src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500" 
+                         alt="Modern weather application interface showing forecast data and clean design" 
+                         class="w-full h-48 object-cover"
+                         data-mock-image="true" data-implementation="Use project screenshot">
+                    
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2" data-bind="project.title">Weather Dashboard</h3>
+                        <p class="text-slate-300 mb-4" data-bind="project.description">
+                            Beautiful weather application with location-based forecasts, interactive charts, 
+                            and responsive design. Features PWA capabilities and offline functionality.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-500/20 text-purple-300 px-2 py-1 rounded text-xs" data-bind="tech">Vue.js</span>
+                            <span class="bg-purple-500/20 text-purple-300 px-2 py-1 rounded text-xs" data-bind="tech">Chart.js</span>
+                            <span class="bg-purple-500/20 text-purple-300 px-2 py-1 rounded text-xs" data-bind="tech">PWA</span>
+                        </div>
+                        
+                        <div class="flex gap-3">
+                            <a href="#" class="flex items-center text-accent hover:text-blue-300 transition-colors duration-300"
+                               data-event="click:openLiveDemo" data-implementation="Open project live demo">
+                                <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                            </a>
+                            <a href="#" class="flex items-center text-slate-400 hover:text-white transition-colors duration-300"
+                               data-event="click:openGitHub" data-implementation="Open GitHub repository">
+                                <i class="fab fa-github mr-2"></i>Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center text-accent hover:text-blue-300 transition-colors duration-300 text-lg"
+                   data-event="click:viewAllProjects" data-implementation="Navigate to complete projects page">
+                    View All Projects <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Projects Section -->
+
+    <!-- @COMPONENT: Contact Section -->
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">
+                Let's <span class="gradient-text">Connect</span>
+            </h2>
+            
+            <p class="text-xl text-slate-300 mb-12" data-bind="contact.description">
+                I'm always interested in new opportunities and exciting projects. 
+                Let's discuss how we can work together!
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <a href="mailto:alex@example.com" class="group">
+                    <div class="bg-secondary/50 rounded-xl p-6 hover:bg-secondary transition-all duration-300">
+                        <i class="fas fa-envelope text-3xl text-accent mb-4"></i>
+                        <h3 class="text-lg font-semibold mb-2">Email</h3>
+                        <p class="text-slate-400 group-hover:text-white transition-colors duration-300" data-bind="contact.email">alex@example.com</p>
+                    </div>
+                </a>
+                
+                <a href="https://linkedin.com/in/alexthompson" class="group">
+                    <div class="bg-secondary/50 rounded-xl p-6 hover:bg-secondary transition-all duration-300">
+                        <i class="fab fa-linkedin text-3xl text-accent mb-4"></i>
+                        <h3 class="text-lg font-semibold mb-2">LinkedIn</h3>
+                        <p class="text-slate-400 group-hover:text-white transition-colors duration-300" data-bind="contact.linkedin">Alex Thompson</p>
+                    </div>
+                </a>
+                
+                <a href="https://github.com/alexthompson" class="group">
+                    <div class="bg-secondary/50 rounded-xl p-6 hover:bg-secondary transition-all duration-300">
+                        <i class="fab fa-github text-3xl text-accent mb-4"></i>
+                        <h3 class="text-lg font-semibold mb-2">GitHub</h3>
+                        <p class="text-slate-400 group-hover:text-white transition-colors duration-300" data-bind="contact.github">@alexthompson</p>
+                    </div>
+                </a>
+            </div>
+            
+            <a href="mailto:alex@example.com" class="bg-accent hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-xl hover:shadow-accent/25 inline-block"
+               data-event="click:sendEmail" data-implementation="Open default email client with pre-filled recipient">
+                Get In Touch
+            </a>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact Section -->
+
+    <!-- @COMPONENT: Footer -->
+    <!-- Footer -->
+    <footer class="bg-secondary/80 py-8 px-4 border-t border-slate-700">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="text-xl font-bold gradient-text" data-bind="footer.name">Alex Thompson</div>
+                    <p class="text-slate-400" data-bind="footer.tagline">Full Stack Developer & UI/UX Designer</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="https://github.com/alexthompson" class="text-slate-400 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/alexthompson" class="text-slate-400 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="https://twitter.com/alexthompson" class="text-slate-400 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="mailto:alex@example.com" class="text-slate-400 hover:text-white transition-colors duration-300">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-700 mt-6 pt-6 text-center text-slate-400">
+                <p data-bind="footer.copyright">&copy; 2024 Alex Thompson. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // Mobile menu functionality
+        (function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = mobileMenuButton.querySelector('i');
+
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                menuIcon.classList.toggle('fa-bars');
+                menuIcon.classList.toggle('fa-times');
+            });
+
+            // Close mobile menu when clicking on a link
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.add('fa-bars');
+                    menuIcon.classList.remove('fa-times');
+                });
+            });
+        })();
+
+        // Smooth scrolling for navigation links
+        (function() {
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        })();
+
+        // Intersection Observer for fade-in animations
+        (function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-up');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe sections for animations
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        })();
+
+        // Animate skill bars when skills section is visible
+        (function() {
+            const skillsSection = document.getElementById('skills');
+            const skillBars = document.querySelectorAll('.skill-bar');
+            let animated = false;
+
+            const skillsObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !animated) {
+                        skillBars.forEach((bar, index) => {
+                            setTimeout(() => {
+                                const width = bar.style.width;
+                                bar.style.width = '0%';
+                                setTimeout(() => {
+                                    bar.style.width = width;
+                                }, 100);
+                            }, index * 200);
+                        });
+                        animated = true;
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            skillsObserver.observe(skillsSection);
+        })();
+
+        // TODO: Implement business logic for:
+        // - Form submissions and validation
+        // - Project data loading from API
+        // - Contact form functionality  
+        // - Resume download functionality
+        // - Portfolio data management
+        // - Analytics tracking
+        // - Performance monitoring
+    </script>
+</body>
+</html>
