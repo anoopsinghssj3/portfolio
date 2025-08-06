@@ -8,6 +8,18 @@ This is a modern personal portfolio website for Alex Thompson, a full stack deve
 
 Preferred communication style: Simple, everyday language.
 
+## Recent Changes
+
+**Performance Optimizations (August 6, 2025)**
+- Implemented lazy loading for all images and React components using React.lazy() and Suspense
+- Optimized image sizes: hero (160x160), projects (400x300), about section (600x450)
+- Added requestAnimationFrame throttling for scroll events to improve performance
+- Created loading spinner component for better perceived performance during transitions
+- Added DNS prefetching and preconnect for external resources (fonts, images)
+- Enhanced color theme with modern purple-to-green gradients and better contrast ratios
+- Improved hover effects and animations throughout the portfolio
+- Code splitting implemented for faster initial page loads
+
 ## System Architecture
 
 ### Frontend Architecture
