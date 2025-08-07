@@ -152,9 +152,7 @@ export default function Footer() {
                 >
                   anoopsinghssj3@gmail.com
                 </motion.a>
-                <p className="text-sm text-muted-foreground">
-                  Rewa, M.P. , India
-                </p>
+               
               </div>
             </motion.div>
           </div>
