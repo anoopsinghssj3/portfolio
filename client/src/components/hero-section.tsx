@@ -129,7 +129,7 @@ export default function HeroSection() {
           >
             <span className="relative z-10 flex items-center gap-2">
               <Download className="w-5 h-5" />
-              Download CV
+              View Resume
             </span>
           </motion.button>
         </motion.div>

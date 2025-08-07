@@ -72,7 +72,7 @@ export default function ContactSection() {
         <div className="absolute top-0 left-0 w-96 h-96 bg-accent rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-0 w-80 h-80 bg-success rounded-full blur-3xl" />
       </div>
-      
+
       {/* Grid Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="w-full h-full bg-grid-pattern" />
@@ -89,14 +89,14 @@ export default function ContactSection() {
             variants={itemVariants}
             className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6"
           >
-            Let's Connect 
+            Let's Connect
           </motion.h2>
-          
+
           <motion.p
             variants={itemVariants}
             className="text-xl text-muted-foreground mb-4 max-w-2xl mx-auto leading-relaxed"
           >
-            I'm always interested in new opportunities and exciting projects. 
+            I'm always interested in new opportunities and exciting projects.
             Let's discuss how we can work together to bring your ideas to life!
           </motion.p>
 
@@ -108,7 +108,7 @@ export default function ContactSection() {
             <span>San Francisco, CA • Open to Remote</span>
           </motion.div>
         </motion.div>
-        
+
         {/* Contact Methods Grid */}
         <motion.div
           className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
@@ -137,7 +137,7 @@ export default function ContactSection() {
                   >
                     <IconComponent className={`${method.color} w-8 h-8`} />
                   </motion.div>
-                  
+
                   {/* Content */}
                   <h3 className="text-lg font-semibold mb-2 group-hover:text-accent transition-colors duration-300">
                     {method.title}
@@ -174,22 +174,23 @@ export default function ContactSection() {
           >
             Ready to Start a Project?
           </motion.h3>
-          
+
           <motion.p
             className="text-muted-foreground mb-8 max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6, delay: 1 }}
           >
-            Whether you have a specific project in mind or just want to explore possibilities, 
+            Whether you have a specific project in mind or just want to explore possibilities,
             I'd love to hear from you. Let's create something amazing together.
           </motion.p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.a
-              href="mailto:alex@example.com"
-              className="group bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 rounded-xl font-semibold transition-all duration-300 inline-flex items-center justify-center"
-              onClick={(e) => e.preventDefault()}
+              href="https://wa.me/919174697005"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 rounded-xl font-semibold transition-all duration-300 inline-flex items-center justify-center relative overflow-hidden"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
               initial={{ opacity: 0, y: 20 }}
@@ -197,16 +198,15 @@ export default function ContactSection() {
               transition={{ duration: 0.6, delay: 1.2 }}
             >
               <Send className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
-              Send Message
+              Send WhatsApp
               <motion.div
                 className="absolute inset-0 bg-white/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               />
             </motion.a>
-            
+
             <motion.a
-              href="#"
+              href="tel:+919174695165"
               className="group border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground px-8 py-4 rounded-xl font-semibold transition-all duration-300 inline-flex items-center justify-center relative overflow-hidden"
-              onClick={(e) => e.preventDefault()}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
               initial={{ opacity: 0, y: 20 }}
