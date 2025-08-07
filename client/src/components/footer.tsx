@@ -10,25 +10,19 @@ export default function Footer() {
   const socialLinks = [
     {
       icon: Github,
-      link: "https://github.com/alexthompson",
+      link: "https://github.com/anoopsinghssj3/",
       label: "GitHub",
       color: "hover:text-purple-400"
     },
     {
       icon: Linkedin,
-      link: "https://linkedin.com/in/alexthompson",
+      link: "https://www.linkedin.com/in/anoop-singh-6b60a0294/",
       label: "LinkedIn",
       color: "hover:text-blue-500"
     },
     {
-      icon: Twitter,
-      link: "https://twitter.com/alexthompson",
-      label: "Twitter",
-      color: "hover:text-blue-400"
-    },
-    {
       icon: Mail,
-      link: "mailto:alex@example.com",
+      link: "mailto:anoopsinghssj3@gmail.com",
       label: "Email",
       color: "hover:text-accent"
     }
@@ -84,10 +78,10 @@ export default function Footer() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div className="text-2xl font-bold">
-                <span className="gradient-text">Alex Thompson</span>
+                <span className="gradient-text">Anoop Singh</span>
               </div>
               <p className="text-muted-foreground leading-relaxed">
-                Full Stack Developer & UI/UX Designer passionate about creating 
+                Mern Stack Developer & Figma Designer passionate about creating
                 beautiful, functional web experiences that make a difference.
               </p>
               <div className="flex space-x-4">
@@ -156,10 +150,10 @@ export default function Footer() {
                   onClick={(e) => e.preventDefault()}
                   whileHover={{ scale: 1.05 }}
                 >
-                  alex@example.com
+                  anoopsinghssj3@gmail.com
                 </motion.a>
                 <p className="text-sm text-muted-foreground">
-                  San Francisco, CA
+                  Rewa, M.P. , India
                 </p>
               </div>
             </motion.div>
@@ -175,14 +169,14 @@ export default function Footer() {
         >
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-muted-foreground text-sm flex items-center">
-              <span>© 2024 Alex Thompson. Made with</span>
+              <span>© 2024 Anoop Singh</span>
               <motion.div
                 className="mx-1"
-                animate={{ 
+                animate={{
                   scale: [1, 1.2, 1],
                   color: ["hsl(var(--muted-foreground))", "hsl(var(--destructive))", "hsl(var(--muted-foreground))"]
                 }}
-                transition={{ 
+                transition={{
                   duration: 1.5,
                   repeat: Infinity,
                   repeatDelay: 3
